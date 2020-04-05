@@ -1,0 +1,57 @@
+./" Simple Shell man page
+.TH "Hol Simple Shell" "05 APRIL 2020" "1.0" "Hol Simple Shell man page"
+
+.SH NAME
+.B hsh
+- Hol Simple Shell.
+
+.SH SYNOPSIS
+.B hsh (options) (file)
+
+.SH DESCRIPTION
+It is a simple shell project that Behaves like Unix shell with limited functionality, It has the same output as /bin/bash.
+
+.SH SYNTAX
+HOL$ <command> <options> <arguments...>
+
+.B EXAMPLE 1:
+HOL$ ls -l
+
+.B EXAMPLE 2:
+HOL$ less file.text
+
+.SH COMMANDS
+.B cd
+- change directory
+
+.B ls
+- lists files and directories
+
+.B cat
+- reads data from a file and gives the content as output
+
+.B env
+- list the curent environment variables
+
+.B alias
+- create an alias
+
+.B exit
+- exit the shell
+
+.SH Options
+No options currently exist for this simple shell command.
+
+.SH RETURN VALUE
+A missing argument or an illegal option causes a non-zero return value, and an error message is printed to standard error. 
+
+.SH SEE ALSO
+man sh
+
+Bash Reference Manual.
+
+.SH AUTHOR
+.B written by :
+
+Youssef Belhadj
+Youssef Sahli
