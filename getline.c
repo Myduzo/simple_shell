@@ -8,15 +8,15 @@
 int main()
 {
 char *buff;
-char my_str;
-size_t bufsize = 10;
+size_t bufsize = 30, len;
 
 buff = (char *)malloc(bufsize * sizeof(char));
 	if (!buff)
 		exit(1);
 
-write(1,"$ ", 2);
-my_str = getline(&buff, &bufsize, stdin);
-write(1, buff,my_str);
+write(1, "#cisfun$ ", 9);
+len = getline(&buff, &bufsize, stdin);
+write(1, buff, len);
+
 return (0);
 }
