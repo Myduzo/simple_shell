@@ -9,7 +9,6 @@ int main()
 {
 char *buff;
 char my_str;
-int len = 0;
 size_t bufsize = 10;
 
 buff = (char *)malloc(bufsize * sizeof(char));
