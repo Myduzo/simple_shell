@@ -8,6 +8,8 @@
 int main()
 {
 char *buff;
+char my_str;
+int len = 0;
 size_t bufsize = 10;
 
 buff = (char *)malloc(bufsize * sizeof(char));
@@ -15,8 +17,11 @@ buff = (char *)malloc(bufsize * sizeof(char));
 		exit(1);
 
 write(1,"$ ", 2);
-getline(&buff, &bufsize, stdin);
-//write(1, buff, my_strlen(buff));
-printf("%s\n", buff);
+my_str = getline(&buff, &bufsize, stdin);
+if (&my_str == NULL)
+{
+	perror("Error");
+}
+write(1, buff,my_str);
 return (0);
 }
