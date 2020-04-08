@@ -24,7 +24,6 @@ len = getline(&buff, &bufsize-1,stdin);
 
 exec(buff, len-1);
 }
-//free(buff);
-//free(str);
+free(buff);
 return (0);
 }

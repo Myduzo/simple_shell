@@ -2,22 +2,22 @@
 void exec(char* st, int num)
 {
 	char* str;
-	int len = 0, i = 1, j;
-	char **ch;
+	int len = 0, i = 0, j;
 	int status;
 	
 	pid_t id;
 	id = fork();
+	
 	if (id == -1)
 	{
 		perror("Error");
 		exit(1);
 	}
-	*ch = sp(st);
-	//printf("%s", ch);
+	char **ch = sp(st);
+	
 	if (id == 0)
 	{
-		if (execve("/bin/pwd", ch, NULL) == -1)
+		execve(ch[0], ch, NULL);
 		perror("ERROR");
 		exit(EXIT_FAILURE);
 		
