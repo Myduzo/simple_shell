@@ -1,12 +1,10 @@
 #include "shellib.h"
 void exec(char* st)
 {
-<<<<<<< HEAD
 	char **ch = sp(st, " ");
-=======
 	char* str;
 	int len = 0, i = 0, j;
->>>>>>> 7174e604b0a3344b231a55afa5cbfd0e76c8cfc0
+
 	int status;
 	
 	pid_t id;

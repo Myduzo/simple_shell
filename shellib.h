@@ -11,12 +11,8 @@
 
 size_t my_strlen(const char *s);
 void exec(char *st);
-<<<<<<< HEAD
 char **sp(char* st, char *dec);
-=======
-char **sp(char* st);
 char** pa(char *st);
->>>>>>> 7174e604b0a3344b231a55afa5cbfd0e76c8cfc0
 
 
 #endif
