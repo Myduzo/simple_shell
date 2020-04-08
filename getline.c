@@ -18,9 +18,9 @@ while (len != EOF)
 {
 write(1, "#cisfun$ ", 9);
 
-len = getline(&buff, &bufsize - 1,stdin);
-
-exec(buff, len - 1);
+len = getline(&buff, &bufsize,stdin);
+buff[len-1] = '\0';
+exec(buff);
 }
 free(buff);
 return (0);

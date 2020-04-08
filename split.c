@@ -1,5 +1,5 @@
 #include "shellib.h"
-char **sp(char* st)
+char **sp(char* st, char *dec)
 {
 	char *str;
 	char *copy;
@@ -10,27 +10,13 @@ char **sp(char* st)
 	
 	copy = strdup(st);
 	
-	str = strtok(copy, " ");
+	str = strtok(copy, dec);
 	while (str != NULL)
 	{
 		ch[i] = strdup(str);
-		str = strtok(NULL, " ");
+		str = strtok(NULL, dec);
 		i++;
 	}
 
 return(ch);
 }
-/*
-int main()
-{
-	int i =0;
-	char *str = "ls -l";
-	char **av = sp(str);
-while (av[i] != NULL)
-{
-	printf("%s\n", av[i]);
-	i++;
-}
-return 0;
-}
-*/

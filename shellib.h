@@ -10,8 +10,8 @@
 #include <sys/wait.h>
 
 size_t my_strlen(const char *s);
-void exec(char *st, int num);
-char **sp(char* st);
+void exec(char *st);
+char **sp(char* st, char *dec);
 
 
 #endif

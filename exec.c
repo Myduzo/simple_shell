@@ -1,7 +1,7 @@
 #include "shellib.h"
-void exec(char* st, int num)
+void exec(char* st)
 {
-	char **ch = sp(st);
+	char **ch = sp(st, " ");
 	int status;
 	
 	pid_t id;
