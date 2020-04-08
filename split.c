@@ -1,33 +1,36 @@
 #include "shellib.h"
-char *sp(char* st)
+char **sp(char* st)
 {
 	char *str;
-	char *copy, *chcopy;
-	int l = 0 , j, i = 1;
-	char **ch = malloc(l * sizeof(char));
-
+	char *copy;
+	int l = 0, i = 0;
 	l = strlen(st);
-	
-	st = (char *)malloc(l * sizeof(char));
-				if (!st)
-					return(NULL);
-	copy = strdup(st);
-	if (copy == NULL)
-	{
-	return(NULL);
-	}
-			str = strtok(copy, " ");
-		for (j = 0; ch[j]; j++)
-		{
-			while (str != NULL)
-			{
-				ch[j + i] = str;
-				str = strtok(NULL, " ");
-				i++;
-				ch[0] = "/usr/bin/";
-			}
-			chcopy = strdup(ch[j]);
-		}
 
-return(chcopy);
+	char **ch = malloc(l * sizeof(char *));
+	
+	copy = strdup(st);
+	
+	str = strtok(copy, " ");
+	while (str != NULL)
+	{
+		ch[i] = strdup(str);
+		str = strtok(NULL, " ");
+		i++;
+	}
+
+return(ch);
 }
+/*
+int main()
+{
+	int i =0;
+	char *str = "ls -l";
+	char **av = sp(str);
+while (av[i] != NULL)
+{
+	printf("%s\n", av[i]);
+	i++;
+}
+return 0;
+}
+*/
