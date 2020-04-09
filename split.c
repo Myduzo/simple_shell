@@ -1,5 +1,5 @@
 #include "shellib.h"
-char **sp(char* st, char *dec)
+char **sp(char *st, char *dec)
 {
 	char *str;
 	char *copy;

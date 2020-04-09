@@ -15,7 +15,7 @@ void exec(char* st)
 		perror("Error");
 		exit(1);
 	}
-	char **ch = sp(st);
+	//char **ch = sp(st);
 	
 	if (id == 0)
 	{

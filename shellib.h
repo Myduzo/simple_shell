@@ -11,8 +11,10 @@
 
 size_t my_strlen(const char *s);
 void exec(char *st);
-char **sp(char* st, char *dec);
-char** pa(char *st);
+char **sp(char *st, char *dec);
+char **pa(char *st);
 char **_position(char *name);
+void _exit(int status);
+
 
 #endif

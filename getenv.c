@@ -9,7 +9,7 @@ char **_position(char *name)
 {
 	char *path = getenv("PATH");
 	char *pa = strdup(path);
-	char **ch = sp(char* st);
+	char **ch = sp(char *st);
 	char *command;
 	struct stat st;
 	int i = 0;
