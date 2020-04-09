@@ -18,11 +18,12 @@ buff = (char *)malloc(bufsize * sizeof(char));
 		exit(1);
 while (len != EOF)
 {
-write(1, "#cisfun$ ", 9);
+write(1, "$:> ",8);
 
 len = getline(&buff, &bufsize,stdin);
 buff[len-1] = '\0';
 exec(buff);
+
 }
 free(buff);
 return (0);
