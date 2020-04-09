@@ -5,9 +5,9 @@
 */
 void _exit(int status)
 {
-	if (x == status)
+	if (status != 0)
 		{
-			write(1,"exit 98",7);
+			write(1,"98",2);
 			return;
 		}
 	else
