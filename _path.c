@@ -14,12 +14,12 @@ char **_path (char **p, char *str)
 	while (p[i] != NULL)
 	{
 		
-		chp = strdup(p[i]);
+		chp = _strdup(p[i]);
 		chp = strcat(chp, "/");
 		chp = strcat(chp,str);
 		if (stat(chp, &st) == 0)
 		{
-			*ch =  strdup(chp);       	
+			*ch = _strdup(chp);       	
 			break;
     	}
     	

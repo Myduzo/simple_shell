@@ -9,12 +9,14 @@
 #include <unistd.h>
 #include <sys/wait.h>
 
-size_t my_strlen(const char *s);
 void exec(char *st);
 char **sp(char *st, char *dec);
 char **pa(char *st);
-char **_position(char *name);
 void _exit(int status);
+size_t _strlen(const char *s);
+char *_strdup(const char *s);
+char *_strcat(char *dest, const char *src);
+char *_strtok(char s[],const char *delims);
 
 
 #endif
