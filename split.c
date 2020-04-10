@@ -1,9 +1,9 @@
 #include "shellib.h"
 /**
 * sp - split function.
-* @st :
-* @dec :
-* Return: 
+* @st : first string
+* @dec : delims
+* Return: splited string
 */
 char **sp(char* st, char *dec)
 {

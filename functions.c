@@ -1,5 +1,4 @@
 #include "shellib.h"
-
 /**
  * _strlen - string length
  * @s : string
@@ -13,6 +12,7 @@ len++;
 
 return (len);
 }
+
 
 /**
  * _strdup - string duplication
@@ -41,6 +41,7 @@ while (y < x)
 }
 return(str);
 }
+
 
 /**
  * _strcat - string concatenate

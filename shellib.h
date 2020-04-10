@@ -14,7 +14,7 @@ void exec(char *st);
 char **sp(char *st, char *dec);
 char **pa(char *st);
 void _exit(int status);
-char **_path (char **p, char *str);
+char **_path(char **p, char *str);
 size_t _strlen(const char *s);
 char *_strdup(const char *s);
 char *_strcat(char *dest, const char *src);

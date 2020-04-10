@@ -1,5 +1,10 @@
 #include "shellib.h"
-void exec(char* st)
+/**
+* exec - exec function
+* @st : char
+*/
+
+void exec(char *st)
 {
 	//char *str;
 	//int len = 0, i = 0, j = 0;
