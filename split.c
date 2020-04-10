@@ -1,4 +1,10 @@
 #include "shellib.h"
+/**
+* sp - split function.
+* @st :
+* @dec :
+* Return: 
+*/
 char **sp(char* st, char *dec)
 {
 	char *str;
@@ -10,11 +16,11 @@ char **sp(char* st, char *dec)
 	
 	copy = _strdup(st);
 	
-	str = _strtok(copy, dec);
+	str = strtok(copy, dec);
 	while (str != NULL)
 	{
 		ch[i] = _strdup(str);
-		str = _strtok(NULL, dec);
+		str = strtok(NULL, dec);
 		i++;
 	}
 

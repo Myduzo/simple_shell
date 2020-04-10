@@ -1,8 +1,8 @@
 #include "shellib.h"
 void exec(char* st)
 {
-	char* str;
-	int len = 0, i = 0, j, o= 0;
+	//char *str;
+	//int len = 0, i = 0, j = 0;
 	int status;
 	
 	pid_t id;
