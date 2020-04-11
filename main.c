@@ -17,7 +17,7 @@ buff = (char *)malloc(bufsize * sizeof(char));
 
 while (len != EOF)
 {
-write(1, "$:> ",8);
+write(1, "$:> ",4);
 len = getline(&buff, &bufsize,stdin);
 buff[len-1] = '\0';
 exec(buff);
