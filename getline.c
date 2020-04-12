@@ -5,8 +5,10 @@
 *
 *
 */
+extern char **environ;
 int main()
 {
+int i = 0;
 char* buff;
 size_t bufsize = 30;
 int len = 0;
@@ -32,8 +34,20 @@ if(strcmp(buff,"exit") == 0 )
 	{
 		exit(0);
 	}
-exec(buff);
 
+if(strcmp(buff,"env") == 0 )
+{	
+	while (environ[i] != NULL)
+	{
+		printf("%s\n",environ[i]);
+		i++;
+		
+	}
+
+}
+
+
+exec(buff);
 }
 free(buff);
 return (0);

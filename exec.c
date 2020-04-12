@@ -1,13 +1,7 @@
 #include "shellib.h"
-/**
-* exec - exec function
-* @st : char
-*/
-
-void exec(char *st)
+void exec(char* st)
 {
-	//char *str;
-	//int len = 0, i = 0, j = 0;
+	
 	int status;
 	
 	pid_t id;
@@ -16,24 +10,28 @@ void exec(char *st)
 	if (id == -1)
 	{
 		perror("Error");
-		exit(1);
+		
 	}
 	char **ch = sp(st, " ");
 	char *s = getenv("PATH");
 	char **strp = sp(s, ":");
 	char **chp = _path(strp,ch[0]);
-	//printf("%s\n",*chp);
 	
 	if (id == 0)
 	{
-		execve(chp[0], ch, NULL);
+		
+		if(execve(chp[0], ch, NULL) == -1);
+		{
+			execve(ch[0], ch, NULL);
+		free(ch);
+		free(strp);
+		free(chp);
+		}
 		perror("ERROR");
-		exit(EXIT_FAILURE);
+		exit(-1);
 		
 	}
 
 		wait(&status);
-	
-	
 
 }
