@@ -14,6 +14,10 @@ void exec(char *st);
 char **sp(char* st, char *dec);
 char **_path (char** p, char *str);
 char *_getenv(char *st);
+size_t _strlen(const char *s);
+char *_strdup(const char *s);
+char *_strcat(char *dest, const char *src);
+char *_strtok(char *s,const char *delims);
 
 
 #endif
