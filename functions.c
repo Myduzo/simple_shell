@@ -44,7 +44,7 @@ char *_strdup(const char *str)
 /**
  * _strcat - string concatenate
  * @dest : first string
- * @src : second string 
+ * @src : second string
  * Return: string.
  */
 char *_strcat(char *dest, char *src)
@@ -54,10 +54,10 @@ len1 = _strlen(dest);
 len2 = _strlen(src);
 len1 = len1 + len2 + 1;
 char *res;
-res = malloc (len1 *sizeof(char));
+res = malloc(len1 *sizeof(char));
 if (!res)
-return(NULL);
-while(dest[i] != '\0')
+return (NULL);
+while (dest[i] != '\0')
 {
 res[i] = dest[i];
 i++;

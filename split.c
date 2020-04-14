@@ -5,24 +5,30 @@
 * @dec : delims
 * Return: splited string
 */
-char **sp(char* st, char *dec)
+char **sp(char *st, char *dec)
 {
 	char *str;
-	char *copy;
-	int l = 0, i = 0;
-	l = _strlen(st);
+	size_t l;
+	int i = 0;
 
-	char **ch = malloc(l * sizeof(char *));
-	
-	copy = _strdup(st);
-	
+	if (st == NULL)
+	return (NULL);
+	l = strlen(st);
+	char *copy = malloc(sizeof(char *) * l);
+
+	char **ch = malloc(l * sizeof(char *) * 2);
+
+	strcpy(copy, st);
+
 	str = strtok(copy, dec);
+	ch[0] = _strdup(str);
 	while (str != NULL)
 	{
 		ch[i] = _strdup(str);
 		str = strtok(NULL, dec);
 		i++;
 	}
-
-return(ch);
+free(str);
+free(copy);
+return (ch);
 }
