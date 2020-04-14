@@ -14,30 +14,32 @@ return (len);
 }
 
 
-
-#include "shellib.h"
-#include <stdio.h>
-#include <stdlib.h>
 /**
- * _strdup- creates an array of chars
- * @str: string
- * Return: Nothing.
+ * _strdup - string duplication
+ * @s : string
+ * Return: string.
  */
-char *_strdup(const char *str)
+char *_strdup(const char *s)
 {
-	int length = 0;
-	char *ret;
+int x = 0, y = 0;
+char *str;
 
-	if (str == NULL)
+if (!s)
+	return (NULL);
+
+while (s[x] != '\0')
+	x++;
+
+str = malloc(sizeof(char) * x + 1);
+	if (!str)
 		return (NULL);
-	while (*str++)
-		length++;
-	ret = malloc(sizeof(char) * (length + 1));
-	if (!ret)
-		return (NULL);
-	for (length++; length--;)
-		ret[length] = *--str;
-	return (ret);
+
+while (y < x)
+{
+	str[y] = s[y];
+	y++;
+}
+return (str);
 }
 
 
@@ -47,28 +49,37 @@ char *_strdup(const char *str)
  * @src : second string
  * Return: string.
  */
-char *_strcat(char *dest, char *src)
+char *_strcat(char *dest, const char *src)
 {
-int i = 0, j = 0, len1 = 0, len2 = 0;
-len1 = _strlen(dest);
-len2 = _strlen(src);
-len1 = len1 + len2 + 1;
-char *res;
-res = malloc(len1 *sizeof(char));
-if (!res)
-return (NULL);
-while (dest[i] != '\0')
+int x = 0, y = 0, z = 0, p = 0;
+char *str;
+
+if (!dest && !src)
+	return (NULL);
+
+while (dest[x] != '\0')
+	x++;
+
+while (src[y] != '\0')
+	y++;
+
+str = malloc(sizeof(char) * (x + y + 1));
+if (!str)
+	return (NULL);
+
+while (z < x)
 {
-res[i] = dest[i];
-i++;
+	str[z] = dest[z];
+	z++;
 }
-while (src[j] != '\0')
+
+while (p < y)
 {
-res[i + j] = src[j];
-j++;
+	str[z] = src[p];
+	z++;
+	p++;
 }
-res[len1 - 1] = '\0';
-return (res);
+return (str);
 }
 
 /**

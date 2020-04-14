@@ -16,7 +16,7 @@ char **_path(char **p, char *str);
 char *_getenv(char *st);
 size_t _strlen(const char *s);
 char *_strdup(const char *s);
-char *_strcat(char *dest, char *src);
+char *_strcat(char *dest, const char *src);
 char *_strcpy(char *dest, char *src);
 
 
