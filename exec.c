@@ -19,7 +19,7 @@ void exec(char *st)
 
 	if (id == 0)
 	{
-		if (execve(chp[0], ch, NULL) == -1);
+		if (execve(chp[0], ch, NULL) == -1)
 		{
 			execve(ch[0], ch, NULL);
 			free(ch);
