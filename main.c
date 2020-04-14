@@ -3,7 +3,6 @@
 * main - main program
 * Return: 0.
 */
-extern char **environ;
 int main(void)
 {
 int len = 0;
@@ -24,8 +23,7 @@ if (len == 1)
 	exit(0);
 }
 buff[len - 1] = '\0';
-if (strcmp(buff, "exit") == 0)
-		exit(0);
+
 exec(buff);
 }
 free(buff);
