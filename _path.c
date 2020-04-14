@@ -25,6 +25,5 @@ char **_path(char **p, char *str)
 		i++;
 		free(chp);
 	}
-
 	return (ch);
 }

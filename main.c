@@ -6,7 +6,7 @@
 extern char **environ;
 int main(void)
 {
-int i = 0, len = 0;
+int len = 0;
 char *buff;
 size_t bufsize = 30;
 buff = (char *)malloc(bufsize * sizeof(char));
