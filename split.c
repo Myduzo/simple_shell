@@ -13,12 +13,12 @@ char **sp(char *st, char *dec)
 
 	if (st == NULL)
 	return (NULL);
-	l = strlen(st);
+	l = _strlen(st);
 	char *copy = malloc(sizeof(char *) * l);
 
 	char **ch = malloc(l * sizeof(char *) * 2);
 
-	strcpy(copy, st);
+	_strcpy(copy, st);
 
 	str = strtok(copy, dec);
 	ch[0] = _strdup(str);

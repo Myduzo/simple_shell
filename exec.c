@@ -1,4 +1,8 @@
 #include "shellib.h"
+/**
+* exec - exec function
+* @st : string.
+*/
 void exec(char *st)
 {
 
@@ -29,7 +33,5 @@ void exec(char *st)
 		perror("ERROR");
 		exit(-1);
 	}
-
 		wait(&status);
-
 }

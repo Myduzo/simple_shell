@@ -1,11 +1,10 @@
 #include "shellib.h"
-
-	/**
-	* _path - find path
-	* @p: char
-	* @str: string
-	* Return: string
-	*/
+/**
+* _path - find path
+* @p: char
+* @str: string
+* Return: string
+*/
 char **_path(char **p, char *str)
 {
 	struct stat st;

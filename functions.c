@@ -71,3 +71,20 @@ res[len1 - 1] = '\0';
 return (res);
 }
 
+/**
+ * _strcpy - string copy
+ * @dest : first string
+ * @src : second string
+ * Return: string.
+ */
+char *_strcpy(char *dest, char *src)
+{
+int i, j = 0;
+while (src[j] != '\0')
+j++;
+for (i = 0; i <= j; i++)
+{
+dest[i] = src[i];
+}
+return (dest);
+}
