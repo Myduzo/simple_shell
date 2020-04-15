@@ -23,8 +23,11 @@ if (len == 1)
 	exit(0);
 }
 buff[len - 1] = '\0';
+if (len > 1)
+{
+	exec(buff);
+}
 
-exec(buff);
 }
 free(buff);
 return (0);
