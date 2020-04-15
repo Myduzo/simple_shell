@@ -1,4 +1,8 @@
 #include "shellib.h"
+/**
+ * exec - exec function of a program
+ * @st: userin
+ */
 void exec(char *st)
 {
 
