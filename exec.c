@@ -6,7 +6,7 @@
 void exec(char *st)
 {
 	char **ch;
-	char *s ;
+	char *s;
 	char **strp;
 	char *chp;
 	int status;
