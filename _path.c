@@ -5,25 +5,22 @@
 * @str: string
 * Return: string
 */
-char **_path(char **p, char *str)
+char *_path(char **p, char *str)
 {
 	struct stat st;
-	int i = 0;
-	char *chp = malloc(sizeof(char *));
-	char **ch = malloc(sizeof(char *));
-
-	while (p[i] != NULL)
+	unsigned int i = 0;
+	char *chp;
+	
+		for (;p[i] != NULL; i++)
 	{
-		chp = _strdup(p[i]);
-		chp = _strcat(chp, "/");
+		chp = _strcat(p[i], "/");
 		chp = _strcat(chp, str);
 		if (stat(chp, &st) == 0)
 		{
-			*ch = _strdup(chp);
 			break;
 		}
-		i++;
-		free(chp);
+		
 	}
-	return (ch);
+
+	return (chp);
 }

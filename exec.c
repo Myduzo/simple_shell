@@ -15,11 +15,11 @@ void exec(char *st)
 	char **ch = sp(st, " ");
 	char *s = getenv("PATH");
 	char **strp = sp(s, ":");
-	char **chp = _path(strp, ch[0]);
+	char *chp = _path(strp, ch[0]);
 
 	if (id == 0)
 	{
-		if (execve(chp[0], ch, NULL) == -1)
+		if (execve(chp, ch, NULL) == -1)
 		{
 			execve(ch[0], ch, NULL);
 			free(ch);

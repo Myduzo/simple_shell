@@ -14,7 +14,7 @@ buff = (char *)malloc(bufsize * sizeof(char));
 while (len != EOF)
 {
 if (isatty(STDIN_FILENO))
-write(1, "$:> ", 4);
+write(1, "⚡ ", 4);
 len = getline(&buff, &bufsize, stdin);
 if (len == 1)
 {
@@ -31,4 +31,3 @@ if (len > 1)
 free(buff);
 return (0);
 }
-

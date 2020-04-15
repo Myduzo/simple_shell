@@ -10,15 +10,15 @@ char **sp(char *st, char *dec)
 	char *str;
 	size_t l;
 	int i = 0;
+	char *copy;
 
 	if (st == NULL)
 	return (NULL);
 	l = _strlen(st);
-	char *copy = malloc(sizeof(char *) * l);
 
 	char **ch = malloc(l * sizeof(char *) * 2);
 
-	_strcpy(copy, st);
+	copy = _strdup(st);
 
 	str = strtok(copy, dec);
 	ch[0] = _strdup(str);
