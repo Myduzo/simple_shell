@@ -31,7 +31,6 @@ void exec(char *st)
 			free(chp);
 		}
 		perror("ERROR");
-		exit(-1);
 	}
 		wait(&status);
 }
