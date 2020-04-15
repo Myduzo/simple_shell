@@ -10,7 +10,6 @@ void exec(char *st)
 	if (id == -1)
 	{
 		perror("Error");
-
 	}
 	char **ch = sp(st, " ");
 	char *s = getenv("PATH");
