@@ -5,7 +5,10 @@
  */
 void exec(char *st)
 {
-
+	char **ch;
+	char *s ;
+	char **strp;
+	char *chp;
 	int status;
 	pid_t id;
 
@@ -15,10 +18,10 @@ void exec(char *st)
 	{
 		perror("Error");
 	}
-	char **ch = sp(st, " ");
-	char *s = getenv("PATH");
-	char **strp = sp(s, ":");
-	char *chp = _path(strp, ch[0]);
+	ch = sp(st, " ");
+	s = getenv("PATH");
+	strp = sp(s, ":");
+	chp = _path(strp, ch[0]);
 
 	if (id == 0)
 	{
@@ -36,4 +39,3 @@ void exec(char *st)
 		wait(&status);
 
 }
-
