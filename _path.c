@@ -11,6 +11,12 @@ char *_path(char **p, char *str)
 	unsigned int i = 0;
 	char *chp;
 
+	if(p == NULL)
+	{
+		_free(p);
+		free(str);
+		return(NULL);
+	}
 		for (; p[i] != NULL; i++)
 	{
 		chp = _strcat(p[i], "/");
@@ -19,8 +25,6 @@ char *_path(char **p, char *str)
 		{
 			break;
 		}
-
 	}
-
 	return (chp);
 }

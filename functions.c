@@ -25,19 +25,21 @@ return (len);
  */
 char *_strdup(const char *str)
 {
-	int length = 0;
-	char *ret;
+	size_t len, i;
+	char *str2;
 
-	if (str == NULL)
+	len = _strlen(str);
+	str2 = malloc(sizeof(char) * (len + 1));
+	if (!str2)
+	{
 		return (NULL);
-	while (*str++)
-		length++;
-	ret = malloc(sizeof(char) * (length + 1));
-	if (!ret)
-		return (NULL);
-	for (length++; length--;)
-		ret[length] = *--str;
-	return (ret);
+	}
+
+	for (i = 0; i <= len; i++)
+	{
+		str2[i] = str[i];
+	}
+	return (str2);
 }
 
 
@@ -89,4 +91,18 @@ dest[i] = src[i];
 return (dest);
 }
 
+
+/*********/
+void _free(char **av)
+{
+if (av == NULL )
+return;
+int i = 0;
+while (av[i] != NULL)
+{
+free(av[i]);
+i++;
+}
+free(av);
+}
 

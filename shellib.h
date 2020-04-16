@@ -18,6 +18,7 @@ size_t _strlen(const char *s);
 char *_strdup(const char *s);
 char *_strcat(char *dest, char *src);
 char *_strcpy(char *dest, char *src);
+void _free(char **av);
 
 
 #endif

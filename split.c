@@ -17,9 +17,10 @@ char **sp(char *st, char *dec)
 	return (NULL);
 	l = _strlen(st);
 
+	copy = malloc(l * sizeof(char *));
 	ch = malloc(l * sizeof(char *) * 2);
 
-	copy = _strdup(st);
+	_strcpy(copy, st);
 
 	str = strtok(copy, dec);
 	ch[0] = _strdup(str);
