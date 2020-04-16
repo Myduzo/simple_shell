@@ -50,10 +50,11 @@ char *_strdup(const char *str)
 char *_strcat(char *dest, char *src)
 {
 int i = 0, j = 0, len1 = 0, len2 = 0;
+char *res;
+
 len1 = _strlen(dest);
 len2 = _strlen(src);
 len1 = len1 + len2 + 1;
-char *res;
 res = malloc(len1 *sizeof(char));
 if (!res)
 return (NULL);

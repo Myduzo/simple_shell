@@ -3,6 +3,7 @@
 * main - main program
 * Return: 0.
 */
+
 int main(void)
 {
 int len = 0;
@@ -16,12 +17,13 @@ while (len != EOF)
 if (isatty(STDIN_FILENO))
 write(1, "⚡ ", 4);
 len = getline(&buff, &bufsize, stdin);
-if (len == 1)
+if (len <= 1)
 {
 	if (isatty(STDIN_FILENO))
 	continue;
-	exit(0);
+	exit(1);
 }
+
 buff[len - 1] = '\0';
 if (len > 1)
 {
