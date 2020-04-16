@@ -7,6 +7,7 @@
 size_t _strlen(const char *s)
 {
 size_t len = 0;
+
 while (*s++)
 len++;
 
@@ -82,6 +83,7 @@ return (res);
 char *_strcpy(char *dest, char *src)
 {
 int i, j = 0;
+
 while (src[j] != '\0')
 j++;
 for (i = 0; i <= j; i++)
@@ -95,9 +97,10 @@ return (dest);
 /*********/
 void _free(char **av)
 {
+int i = 0;
+
 if (av == NULL )
 return;
-int i = 0;
 while (av[i] != NULL)
 {
 free(av[i]);
