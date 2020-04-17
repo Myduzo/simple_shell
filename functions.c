@@ -7,7 +7,6 @@
 size_t _strlen(const char *s)
 {
 size_t len = 0;
-
 while (*s++)
 len++;
 
@@ -24,24 +23,19 @@ return (len);
  * @str: string
  * Return: Nothing.
  */
-char *_strdup(const char *str)
+char *_strdup(char *str)
 {
-	size_t len, i;
-	char *str2;
+	char *dupl;
 
-	len = _strlen(str);
-	str2 = malloc(sizeof(char) * (len + 1));
-	if (!str2)
-	{
+	if (str == NULL)
 		return (NULL);
-	}
-
-	for (i = 0; i <= len; i++)
-	{
-		str2[i] = str[i];
-	}
-	return (str2);
+	dupl = malloc(_strlen(str) + 1);
+	if (dupl == NULL)
+		return (NULL);
+	_strcpy(dupl, str);
+	return (dupl);
 }
+
 
 
 /**
@@ -80,17 +74,16 @@ return (res);
  * @src : second string
  * Return: string.
  */
-char *_strcpy(char *dest, char *src)
+char *_strcpy(char *dest, char *source)
 {
-int i, j = 0;
+	int i;
 
-while (src[j] != '\0')
-j++;
-for (i = 0; i <= j; i++)
-{
-dest[i] = src[i];
-}
-return (dest);
+	for (i = 0; source[i] != '\0'; i++)
+	{
+		dest[i] = source[i];
+	}
+	dest[i] = '\0';
+	return (dest);
 }
 
 

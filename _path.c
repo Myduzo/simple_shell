@@ -13,18 +13,17 @@ char *_path(char **p, char *str)
 
 	if(p == NULL)
 	{
-		_free(p);
-		free(str);
 		return(NULL);
 	}
 		for (; p[i] != NULL; i++)
 	{
 		chp = _strcat(p[i], "/");
 		chp = _strcat(chp, str);
+	
 		if (stat(chp, &st) == 0)
 		{
-			break;
+			return (chp);
 		}
 	}
-	return (chp);
+	return (NULL);
 }

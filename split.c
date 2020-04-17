@@ -9,26 +9,27 @@ char **sp(char *st, char *dec)
 {
 	char *str;
 	size_t l;
-	int i = 0;
 	char *copy;
 	char **ch;
+	int i = 0;
 
 	if (st == NULL)
 	return (NULL);
-	l = _strlen(st);
+	l = strlen(st);
+	
+	copy = malloc(l * sizeof(char *) + 1);
+	ch = malloc(l * sizeof(char *) + 2);
 
-	copy = malloc(l * sizeof(char *));
-	ch = malloc(l * sizeof(char *) * 2);
-
-	_strcpy(copy, st);
+	strcpy(copy, st);
 
 	str = strtok(copy, dec);
-	ch[0] = _strdup(str);
 	while (str != NULL)
 	{
-		ch[i] = _strdup(str);
+		ch[i] = malloc(_strlen(str) * sizeof(char) + 1);
+		_strcpy(ch[i], str);
 		str = strtok(NULL, dec);
 		i++;
+		
 	}
 free(str);
 free(copy);

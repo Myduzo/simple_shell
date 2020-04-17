@@ -25,6 +25,7 @@ void exec(char *st)
 
 	if (id == 0)
 	{
+		//_free(strp);
 		if (execve(chp, ch, NULL) == -1)
 		{
 			execve(ch[0], ch, NULL);
@@ -32,7 +33,8 @@ void exec(char *st)
 		perror("ERROR");
 		exit(EXIT_FAILURE);
 	}
-
+		free(chp);
+		
 		wait(&status);
 
 }
