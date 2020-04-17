@@ -5,10 +5,11 @@
 */
 int main(void)
 {
-int len = 0;
-char *buff, **test;
-size_t bufsize = 30;
-buff = (char *)malloc(bufsize * sizeof(char));
+	int len = 0;
+	char *buff, **test;
+	size_t bufsize = 30;
+
+	buff = (char *)malloc(bufsize * sizeof(char));
 	if (!buff)
 	{
 	free(buff);
@@ -21,10 +22,7 @@ buff = (char *)malloc(bufsize * sizeof(char));
 		if (len == -1)
 			free(buff);
 		if (strcmp(buff, "env") == 0)
-		{
-			_env(buff);
-			_prout();
-		}
+		_env(buff);
 		len = getline(&buff, &bufsize, stdin);
 		if (len <= 1)
 		{

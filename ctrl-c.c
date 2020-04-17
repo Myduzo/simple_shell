@@ -6,7 +6,7 @@
 void _ctrlc(int sign)
 {
 	signal(sign, SIG_IGN);
-	write(1,"\nPlease type 'exit' to quit.\n", 29);
-	write(1, "💫 ", 5);
+	_printf("\nPlease type 'exit' to quit.\n");
+	_printf("💫 ");
 	signal(SIGINT, _ctrlc);
 }

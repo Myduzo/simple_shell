@@ -1,7 +1,7 @@
 #include "shellib.h"
 /**
  * _env - prints environment variables
- * @env: env variables
+ * @buff: env variables
  * Return: 1.
  */
 int _env(char *buff)
@@ -14,6 +14,7 @@ while (environ[x])
 printf("%s\n", environ[x]);
 x++;
 }
+_prout();
 }
 return (1);
 }
