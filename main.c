@@ -21,8 +21,8 @@ buff = (char *)malloc(bufsize * sizeof(char));
 			free(buff);
 		if (strcmp(buff, "env") == 0)
 		{
-		_env();
-		_prout();
+			_env();
+			_prout();
 		}
 		len = getline(&buff, &bufsize, stdin);
 		if (len <= 1)

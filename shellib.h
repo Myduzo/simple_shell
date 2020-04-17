@@ -24,8 +24,6 @@ int _strcmp(char *str1, char *str2);
 void _ex(char *buff);
 void _prout(void);
 void _printf(char *str);
-int _putchar(char c);
 void _env(void);
-
 
 #endif

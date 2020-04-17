@@ -22,15 +22,13 @@ int _strcmp(char *str1, char *str2)
 
 
 /**
- * _ex- exit
+ * _ex - exit
  * @buff: Input
  */
 void _ex(char *buff)
 {
 	if (_strcmp(buff, "exit") == 0)
-		{
 			exit(0);
-		}
 }
 
 
