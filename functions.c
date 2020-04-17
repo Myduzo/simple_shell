@@ -70,29 +70,33 @@ return (res);
 }
 /**
  * _strcpy - string copy
- * @dest : first string
- * @src : second string
+ * @dest: first string
+ * @src: second string
  * Return: string.
  */
-char *_strcpy(char *dest, char *source)
+char *_strcpy(char *dest, char *src)
 {
 	int i;
 
-	for (i = 0; source[i] != '\0'; i++)
+	for (i = 0; src
+[i] != '\0'; i++)
 	{
-		dest[i] = source[i];
+		dest[i] = src
+	[i];
 	}
 	dest[i] = '\0';
 	return (dest);
 }
-
-
-/*********/
+/**
+ * _free - freed 2d arry
+ * @av: array
+ * Return: string.
+ */
 void _free(char **av)
 {
 int i = 0;
 
-if (av == NULL )
+if (av == NULL)
 return;
 while (av[i] != NULL)
 {
@@ -101,4 +105,3 @@ i++;
 }
 free(av);
 }
-

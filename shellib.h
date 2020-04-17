@@ -19,6 +19,9 @@ char *_strdup(char *s);
 char *_strcat(char *dest, char *src);
 char *_strcpy(char *dest, char *src);
 void _free(char **av);
+int _strcmp(char *str1, char *str2);
+void _ex(char *buff);
+void _prout(void);
 
 
 #endif

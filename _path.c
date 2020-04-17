@@ -11,15 +11,14 @@ char *_path(char **p, char *str)
 	unsigned int i = 0;
 	char *chp;
 
-	if(p == NULL)
+	if (p == NULL)
 	{
-		return(NULL);
+		return (NULL);
 	}
 		for (; p[i] != NULL; i++)
 	{
 		chp = _strcat(p[i], "/");
 		chp = _strcat(chp, str);
-	
 		if (stat(chp, &st) == 0)
 		{
 			return (chp);

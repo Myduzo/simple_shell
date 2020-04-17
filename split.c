@@ -16,7 +16,7 @@ char **sp(char *st, char *dec)
 	if (st == NULL)
 	return (NULL);
 	l = strlen(st);
-	
+
 	copy = malloc(l * sizeof(char *) + 1);
 	ch = malloc(l * sizeof(char *) + 2);
 
@@ -29,7 +29,7 @@ char **sp(char *st, char *dec)
 		_strcpy(ch[i], str);
 		str = strtok(NULL, dec);
 		i++;
-		
+
 	}
 free(str);
 free(copy);
