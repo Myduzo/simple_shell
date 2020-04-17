@@ -40,5 +40,24 @@ void _ex(char *buff)
 void _prout(void)
 {
 	if (isatty(STDIN_FILENO))
-		write(1, "💫 ",5);
+		write(1, "💫 ", 5);
+}
+
+
+/**
+ * _printf - Prints a string char to stdout.
+ * @str: String to print.
+ * Return: string.
+ */
+int _printf(char *str)
+{
+int i = 0;
+char c;
+
+while (str[i] != '\0')
+{
+c = (str[i]);
+i++;
+}
+return (write(1, &c, 1));
 }

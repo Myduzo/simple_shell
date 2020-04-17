@@ -10,7 +10,7 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 
-
+extern char **environ;
 void exec(char *st);
 char **sp(char *st, char *dec);
 char *_path(char **p, char *str);
@@ -23,6 +23,7 @@ void _free(char **av);
 int _strcmp(char *str1, char *str2);
 void _ex(char *buff);
 void _prout(void);
+int _printf(char *str);
 
 
 #endif

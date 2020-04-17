@@ -3,13 +3,11 @@
 * main - main program
 * Return: 0.
 */
-
 int main(void)
 {
-int len = 0;
+int len = 0, x = 0;
 char *buff, **test;
 size_t bufsize = 30;
-
 buff = (char *)malloc(bufsize * sizeof(char));
 	if (!buff)
 	{
@@ -19,21 +17,24 @@ buff = (char *)malloc(bufsize * sizeof(char));
 	while (len != EOF)
 	{
 		_prout();
-		len = getline(&buff, &bufsize, stdin);
-
 		if (len == -1)
-		{
 			free(buff);
+		if (strcmp(buff, "env") == 0)
+		{
+			while (environ[x])
+			{
+				printf("%s\n", environ[x]);
+				x++;
+			}
+			_prout();
 		}
+		len = getline(&buff, &bufsize, stdin);
 		if (len <= 1)
 		{
 			if (isatty(STDIN_FILENO))
-			{
 				continue;
-			}
 			exit(0);
 		}
-
 		test = sp(buff, " /\n\t");
 		if (test[0] == NULL)
 		{
