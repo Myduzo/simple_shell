@@ -45,19 +45,30 @@ void _prout(void)
 
 
 /**
- * _printf - Prints a string char to stdout.
- * @str: String to print.
- * Return: string.
+ * print_char - Prints a single char to stdout.
+ *
+ * @c: Char to print.
+ *
+ * Return: write stdlib execution (int)
  */
-int _printf(char *str)
+int print_char(char c)
 {
-int i = 0;
-char c;
-
-while (str[i] != '\0')
-{
-c = (str[i]);
-i++;
+	return (write(1, &c, 1));
 }
-return (write(1, &c, 1));
+
+/**
+ * _printf - Prints a string char to stdout.
+ *
+ * @str: String to print.
+ *
+ * Return: (void)
+ */
+void _printf(char *str)
+{
+	int i;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		print_char(str[i]);
+	}
 }
