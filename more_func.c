@@ -22,15 +22,13 @@ int _strcmp(char *str1, char *str2)
 
 
 /**
- * _ex- exit
+ * _ex - exit
  * @buff: Input
  */
 void _ex(char *buff)
 {
 	if (_strcmp(buff, "exit") == 0)
-		{
 			exit(0);
-		}
 }
 
 
@@ -45,19 +43,28 @@ void _prout(void)
 
 
 /**
- * _printf - Prints a string char to stdout.
- * @str: String to print.
- * Return: string.
+ * print_c - Prints a single char.
+ * @c: Char.
+ * Return: write.
  */
-int _printf(char *str)
+int print_c(char c)
 {
-int i = 0;
-char c;
+	return (write(1, &c, 1));
+}
 
-while (str[i] != '\0')
+/**
+ * _printf - Prints a string char.
+ * @str: String.
+ */
+void _printf(char *str)
 {
-c = (str[i]);
-i++;
+	int x;
+
+	while (str[x])
+	{
+		print_c(str[x]);
+		x++;
+	}
 }
-return (write(1, &c, 1));
-}
+
+
