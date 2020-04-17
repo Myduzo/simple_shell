@@ -14,7 +14,6 @@ while (environ[x])
 printf("%s\n", environ[x]);
 x++;
 }
-_prout();
 }
 return (1);
 }

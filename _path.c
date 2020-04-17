@@ -9,7 +9,6 @@ char *_path(char **p, char *str)
 {
 	struct stat st;
 	unsigned int i = 0;
-	char *chp;
 
 	if (p == NULL)
 	{
@@ -17,11 +16,12 @@ char *_path(char **p, char *str)
 	}
 		for (; p[i] != NULL; i++)
 	{
-		chp = _strcat(p[i], "/");
-		chp = _strcat(chp, str);
-		if (stat(chp, &st) == 0)
+		p[i] = _strcat(p[i], "/");
+		p[i] = _strcat(p[i], str);
+		if (stat(p[i], &st) == 0)
 		{
-			return (chp);
+			return (p[i]);
+			free(p[i]);
 		}
 	}
 	return (NULL);

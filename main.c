@@ -14,6 +14,7 @@ buff = (char *)malloc(bufsize * sizeof(char));
 	free(buff);
 	exit(1);
 	}
+	signal(SIGINT, _ctrlc);
 	while (len != EOF)
 	{
 		_prout();
@@ -21,7 +22,7 @@ buff = (char *)malloc(bufsize * sizeof(char));
 			free(buff);
 		if (strcmp(buff, "env") == 0)
 		{
-			_env();
+			_env(buff);
 			_prout();
 		}
 		len = getline(&buff, &bufsize, stdin);
