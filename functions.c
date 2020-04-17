@@ -14,10 +14,6 @@ return (len);
 }
 
 
-
-#include "shellib.h"
-#include <stdio.h>
-#include <stdlib.h>
 /**
  * _strdup- creates an array of chars
  * @str: string
@@ -37,7 +33,6 @@ char *_strdup(char *str)
 }
 
 
-
 /**
  * _strcat - string concatenate
  * @dest : first string
@@ -55,19 +50,24 @@ len1 = len1 + len2 + 1;
 res = malloc(len1 *sizeof(char));
 if (!res)
 return (NULL);
+
 while (dest[i] != '\0')
 {
 res[i] = dest[i];
 i++;
 }
+
 while (src[j] != '\0')
 {
 res[i + j] = src[j];
 j++;
 }
+
 res[len1 - 1] = '\0';
 return (res);
 }
+
+
 /**
  * _strcpy - string copy
  * @dest: first string
@@ -78,15 +78,16 @@ char *_strcpy(char *dest, char *src)
 {
 	int i;
 
-	for (i = 0; src
-[i] != '\0'; i++)
+	for (i = 0; src[i] != '\0'; i++)
 	{
-		dest[i] = src
-	[i];
+		dest[i] = src[i];
 	}
+
 	dest[i] = '\0';
 	return (dest);
 }
+
+
 /**
  * _free - freed 2d arry
  * @av: array

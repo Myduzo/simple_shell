@@ -15,12 +15,12 @@ char **sp(char *st, char *dec)
 
 	if (st == NULL)
 	return (NULL);
-	l = strlen(st);
+	l = _strlen(st);
 
 	copy = malloc(l * sizeof(char *) + 1);
 	ch = malloc(l * sizeof(char *) + 2);
 
-	strcpy(copy, st);
+	_strcpy(copy, st);
 
 	str = strtok(copy, dec);
 	while (str != NULL)

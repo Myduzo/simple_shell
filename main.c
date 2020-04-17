@@ -3,6 +3,7 @@
 * main - main program
 * Return: 0.
 */
+
 int main(void)
 {
 int len = 0;
@@ -19,6 +20,7 @@ buff = (char *)malloc(bufsize * sizeof(char));
 	{
 		_prout();
 		len = getline(&buff, &bufsize, stdin);
+
 		if (len == -1)
 		{
 			free(buff);
@@ -31,6 +33,7 @@ buff = (char *)malloc(bufsize * sizeof(char));
 			}
 			exit(0);
 		}
+
 		test = sp(buff, " /\n\t");
 		if (test[0] == NULL)
 		{

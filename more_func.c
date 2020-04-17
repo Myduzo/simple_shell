@@ -19,6 +19,8 @@ int _strcmp(char *str1, char *str2)
 	else
 		return (0);
 }
+
+
 /**
  * _ex- exit
  * @buff: Input
@@ -30,11 +32,13 @@ void _ex(char *buff)
 			exit(0);
 		}
 }
+
+
 /**
  * _prout - print prompt
  */
 void _prout(void)
 {
 	if (isatty(STDIN_FILENO))
-		write(1, "💫 ", 4);
+		write(1, "💫 ",5);
 }

@@ -10,6 +10,7 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 
+
 void exec(char *st);
 char **sp(char *st, char *dec);
 char *_path(char **p, char *str);

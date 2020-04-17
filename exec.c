@@ -34,5 +34,4 @@ void exec(char *st)
 	}
 		free(chp);
 		wait(&status);
-
 }
