@@ -1,6 +1,6 @@
 #include "shellib.h"
 /**
- * _ctrlc - function to intercept Ctrl-C.
+ * _ctrlc -Ctrl-C.
  * @sign: Signal.
  */
 void _ctrlc(int sign)

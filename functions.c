@@ -21,15 +21,15 @@ return (len);
  */
 char *_strdup(char *str)
 {
-	char *dupl;
+	char *dup;
 
 	if (str == NULL)
 		return (NULL);
-	dupl = malloc(_strlen(str) + 1);
-	if (dupl == NULL)
+	dup = malloc(_strlen(str) + 1);
+	if (dup == NULL)
 		return (NULL);
-	_strcpy(dupl, str);
-	return (dupl);
+	_strcpy(dup, str);
+	return (dup);
 }
 
 
