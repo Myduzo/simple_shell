@@ -33,7 +33,7 @@ int main(void)
 		test = sp(buff, " /\n\t");
 		if (test[0] == NULL)
 		{
-			free(test);
+			_free(test);
 			continue;
 		}
 		buff[len - 1] = '\0';

@@ -12,6 +12,7 @@ char *_path(char **p, char *str)
 
 	if (p == NULL)
 	{
+		_free(p);
 		return (NULL);
 	}
 		for (; p[i] != NULL; i++)
@@ -20,9 +21,10 @@ char *_path(char **p, char *str)
 		p[i] = _strcat(p[i], str);
 		if (stat(p[i], &st) == 0)
 		{
+			free(str);
 			return (p[i]);
-			free(p[i]);
 		}
+		free(p[i]);
 	}
 	return (NULL);
 }

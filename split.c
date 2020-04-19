@@ -14,15 +14,21 @@ char **sp(char *st, char *dec)
 	int i = 0;
 
 	if (st == NULL)
-	return (NULL);
+	{
+		free(st);
+		return (NULL);
+	}
 	l = _strlen(st);
-
 	copy = malloc(l * sizeof(char *) + 1);
 	ch = malloc(l * sizeof(char *) + 2);
-
 	_strcpy(copy, st);
-
 	str = strtok(copy, dec);
+	if (str == NULL)
+	{
+		free(str);
+		free(copy);
+		return(NULL);
+	}
 	while (str != NULL)
 	{
 		ch[i] = malloc(_strlen(str) * sizeof(char) + 1);

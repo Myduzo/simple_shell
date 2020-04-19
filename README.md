@@ -14,46 +14,27 @@ Common commands
 The list below is not exhaustive, but contains many of the most commonly used commands.
 
 Command	Description
-cd NAME-OF-DIRECTORY	Go into a directory to work in it
-cd ..	Go back one directory
 ls	List what’s in the current directory
 ls a*	List what’s in the current directory that starts with a
 ls *.md	List what’s in the current directory that ends with .md
 mkdir NAME-OF-YOUR-DIRECTORY	Create a new directory
 cat README.md	Display the contents of a text file you created previously
 pwd	Show the current directory
-clear	Clear the shell window
 Create a text file in the current directory
 To create a text file from the command line, for example README.md, follow these steps:
+# You can use this for compiler
+```
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+```
+# And then Type
+```
+./hsh
+```
+#
+![Simple_Shell Image](1.png)
+#
+![Simple_Shell Image](2.png)
+## Authors
 
-touch README.md
-nano README.md
-#### ADD YOUR INFORMATION
-#### Press: control + X
-#### Type: Y
-#### Press: enter
+See also the list of the authos who participated in this project in the [AUTHORS](AUTHORS) file.
 
-Remove a file or directory
-It is easy to delete (remove) a file or directory, but be careful:
-
-Danger: This will permanently delete a file.
-rm NAME-OF-FILE
-
-Danger: This will permanently delete a directory and all of its contents.
-rm -r NAME-OF-DIRECTORY
-
-View and Execute commands from history
-You can view the history of all the commands you executed from the command line, and then execute any of them again, if needed.
-
-First, list the commands you executed previously:
-
-history
-
-Then, choose a command from the list and check the number next to the command (123, for example) . Execute the same full command with:
-
-!123
-
-Carry out commands for which the account you are using lacks authority
-Not all commands can be executed from a basic user account on a computer, you may need administrator’s rights to execute commands that affect the system, or try to access protected data, for example. You can use sudo to execute these commands, but you will likely be asked for an administrator password.
-
-sudo RESTRICTED-COMMAND
