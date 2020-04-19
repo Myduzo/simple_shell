@@ -27,7 +27,7 @@ char **sp(char *st, char *dec)
 	{
 		free(str);
 		free(copy);
-		return(NULL);
+		return (NULL);
 	}
 	while (str != NULL)
 	{
