@@ -35,7 +35,6 @@ void exec(char *st)
 		if (execve(chp, ch, NULL) == -1)
 		{
 			execve(ch[0], ch, NULL);
-			(strp);
 			free(chp);
 		}
 		free(s);
