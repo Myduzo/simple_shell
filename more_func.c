@@ -28,7 +28,9 @@ int _strcmp(char *str1, char *str2)
 void _ex(char *buff)
 {
 	if (_strcmp(buff, "exit") == 0)
-			exit(0);
+	{
+		exit(0);
+	}
 }
 
 
