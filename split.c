@@ -7,28 +7,23 @@
 */
 char **sp(char *st, char *dec)
 {
-	char *str;
-	size_t l;
-	char *copy;
-	char **ch;
+	char *str = NULL;
+	size_t l = 0;
+	char *copy = NULL;
+	char **ch = NULL;
 	int i = 0;
 
 	if (st == NULL)
 	{
-		free(st);
 		return (NULL);
 	}
 	l = _strlen(st);
 	copy = malloc(l * sizeof(char *) + 1);
-	ch = malloc(l * sizeof(char *) + 2);
+	memset(copy, 0, l + 1);
+	ch = malloc(l * sizeof(char *) + 1);
+	memset(ch, 0, l + 1);
 	_strcpy(copy, st);
 	str = strtok(copy, dec);
-	if (str == NULL)
-	{
-		free(str);
-		free(copy);
-		return (NULL);
-	}
 	while (str != NULL)
 	{
 		ch[i] = malloc(_strlen(str) * sizeof(char) + 1);
@@ -37,7 +32,7 @@ char **sp(char *st, char *dec)
 		i++;
 
 	}
-free(str);
+ch[i] = NULL;
 free(copy);
 return (ch);
 }

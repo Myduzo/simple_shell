@@ -5,44 +5,34 @@
  */
 void exec(char *st)
 {
-	char **ch;
-	char *s;
-	char **strp;
-	char *chp;
-	int status;
-	pid_t id;
+char **ch = NULL;
+char *chp = NULL;
+int status;
+pid_t id;
 
-	id = fork();
-
-	if (id == -1)
-	{
-		perror("Error");
-	}
-	ch = sp(st, " ");
-	if (ch == NULL)
-	free(ch);
-	s = getenv("PATH");
-	if (s == NULL)
-	free(s);
-	strp = sp(s, ":");
-	if (strp == NULL)
-	_free(strp);
-	chp = _path(strp, ch[0]);
-	if (chp == NULL)
-	free(chp);
-	if (id == 0)
-	{
-		if (execve(chp, ch, NULL) == -1)
-		{
-			execve(ch[0], ch, NULL);
-			free(chp);
-		}
-		perror("ERROR");
-		free(s);
-		_free(strp);
-		free(chp);
-		exit(EXIT_FAILURE);
-	}
-		free(chp);
-		wait(&status);
+ch = sp(st, " ");
+chp = _path(ch);
+if (chp != NULL)
+{
+free(ch[0]);
+ch[0] = chp;
+}
+id = fork();
+if (id == -1)
+{
+perror("Error");
+free(st);
+}
+if (id == 0)
+{
+if (execve(ch[0], ch, environ))
+{
+perror("error");
+_free(ch);
+exit(EXIT_FAILURE);
+}
+exit(EXIT_SUCCESS);
+}
+wait(&status);
+_free(ch);
 }
