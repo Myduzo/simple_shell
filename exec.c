@@ -37,10 +37,10 @@ void exec(char *st)
 			execve(ch[0], ch, NULL);
 			free(chp);
 		}
+		perror("ERROR");
 		free(s);
 		_free(strp);
 		free(chp);
-		perror("ERROR");
 		exit(EXIT_FAILURE);
 	}
 		free(chp);
