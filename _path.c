@@ -1,30 +1,32 @@
 #include "shellib.h"
 /**
 * _path - find path
-* @p: char
 * @str: string
 * Return: string
 */
-char *_path(char **p, char *str)
+char *_path(char **str)
 {
 	struct stat st;
 	unsigned int i = 0;
+	char *s = NULL;
+	char **strp = NULL;
 
-	if (p == NULL)
+	s = getenv("PATH");
+	if (s == NULL)
+	return (NULL);
+	strp = sp(s, ":");
+	if (strp == NULL)
 	{
-		_free(p);
 		return (NULL);
 	}
-		for (; p[i] != NULL; i++)
+		for (; strp[i] != NULL; i++)
 	{
-		p[i] = _strcat(p[i], "/");
-		p[i] = _strcat(p[i], str);
-		if (stat(p[i], &st) == 0)
+		strp[i] = _strcat(strp[i], "/");
+		strp[i] = _strcat(strp[i], str[0]);
+		if (stat(strp[i], &st) == 0)
 		{
-			free(str);
-			return (p[i]);
+			return (strp[i]);
 		}
-		free(p[i]);
 	}
 	return (NULL);
 }

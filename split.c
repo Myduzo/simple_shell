@@ -8,20 +8,14 @@
 char **sp(char *st, char *dec)
 {
 	char *str = NULL;
-	size_t l = 0;
+	size_t l;
 	char *copy = NULL;
 	char **ch = NULL;
 	int i = 0;
 
-	if (st == NULL)
-	{
-		return (NULL);
-	}
 	l = _strlen(st);
 	copy = malloc(l * sizeof(char *) + 1);
-	memset(copy, 0, l + 1);
-	ch = malloc(l * sizeof(char *) + 1);
-	memset(ch, 0, l + 1);
+	ch = malloc(l * sizeof(char *) + 2);
 	_strcpy(copy, st);
 	str = strtok(copy, dec);
 	while (str != NULL)
@@ -32,7 +26,6 @@ char **sp(char *st, char *dec)
 		i++;
 
 	}
-ch[i] = NULL;
 free(copy);
 return (ch);
 }

@@ -3,7 +3,8 @@
  * _env - prints environment variables
  * @buff: env variables
  * Return: 1.
- */
+*/
+/*
 int _env(char *buff)
 {
 int x = 0;
@@ -18,3 +19,4 @@ _prout();
 }
 return (1);
 }
+*/

@@ -5,34 +5,34 @@
  */
 void exec(char *st)
 {
-char **ch = NULL;
-char *chp = NULL;
-int status;
-pid_t id;
+	char **ch = NULL;
+	char *chp = NULL;
+	int status;
+	pid_t id;
 
-ch = sp(st, " ");
-chp = _path(ch);
-if (chp != NULL)
-{
-free(ch[0]);
-ch[0] = chp;
-}
-id = fork();
-if (id == -1)
-{
-perror("Error");
-free(st);
-}
-if (id == 0)
-{
-if (execve(ch[0], ch, environ))
-{
-perror("error");
-_free(ch);
-exit(EXIT_FAILURE);
-}
-exit(EXIT_SUCCESS);
-}
-wait(&status);
-_free(ch);
+	id = fork();
+
+	if (id == -1)
+	{
+		free(st);
+		perror("Error");
+	}
+	ch = sp(st, " ");
+	if (ch == NULL)
+	free(ch);
+	chp = _path(ch);
+	if (chp == NULL)
+	free(chp);
+	if (id == 0)
+	{
+		if (execve(chp, ch, environ) == -1)
+		{
+			execve(ch[0], ch, environ);
+			free(ch);
+		}
+		perror("ERROR");
+		free(ch);
+		exit(EXIT_FAILURE);
+	}
+		wait(&status);
 }

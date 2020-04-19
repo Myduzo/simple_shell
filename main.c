@@ -21,6 +21,10 @@ int main(void)
 		_prout();
 		if (len == -1)
 			free(buff);
+		/*
+		if (strcmp(buff, "env") == 0)
+		_env(buff);
+		*/
 		len = getline(&buff, &bufsize, stdin);
 		if (len <= 1)
 		{
@@ -35,11 +39,11 @@ int main(void)
 			continue;
 		}
 		buff[len - 1] = '\0';
+		/*
 		_ex(buff);
+		*/
 		if (len > 1 && buff != NULL)
 		exec(buff);
 	}
-buff = '\0';
-free(buff);
 return (0);
 }

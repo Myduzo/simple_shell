@@ -7,7 +7,7 @@ To work on a Git project locally (from your own computer), with the command line
 
 Working with files on the command line
 This section has examples of some basic shell commands that you might find useful. For more information, search the web for bash commands.
-
+git@github.com:Myduzo/simple_shell.git
 Alternatively, you can edit files using your choice of editor (IDE), or the GitLab user interface (not locally).
 
 Common commands

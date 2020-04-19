@@ -14,17 +14,20 @@ int _strcmp(char *str1, char *str2)
 		i++;
 
 	if (str1[i] > str2[i] || str1[i] < str2[i])
+	{
 		return (1);
-
+	}
 	else
+	{
 		return (0);
+	}
 }
-
 
 /**
  * _ex - exit
  * @buff: Input
  */
+/*
 void _ex(char *buff)
 {
 	if (_strcmp(buff, "exit") == 0)
@@ -32,7 +35,7 @@ void _ex(char *buff)
 		exit(0);
 	}
 }
-
+*/
 
 /**
  * _prout - print prompt
